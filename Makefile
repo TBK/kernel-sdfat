@@ -2,6 +2,8 @@
 # Makefile for the linux FAT12/16/32(VFAT)/64(exFAT) filesystem driver.
 #
 
+KERNELDIR=/lib/modules/$(shell uname -r)/build
+
 obj-$(CONFIG_SDFAT_FS) += sdfat_fs.o
 
 sdfat_fs-objs	:= sdfat.o core.o core_fat.o core_exfat.o api.o blkdev.o \
@@ -13,10 +15,10 @@ sdfat_fs-$(CONFIG_SDFAT_STATISTICS) += statistics.o
 
 
 all:
-	@$(MAKE) -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+	@$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
 
 clean:
-	@$(MAKE) -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	@$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
 
 cscope:
 	rm -rf cscope.files cscope.files
