@@ -5267,4 +5267,5 @@ module_exit(exit_sdfat_fs);
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("FAT/exFAT filesystem support");
 MODULE_AUTHOR("Samsung Electronics Co., Ltd.");
+MODULE_VERSION(SDFAT_VERSION);
 
