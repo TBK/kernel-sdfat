@@ -2375,7 +2375,7 @@ static int __sdfat_create(struct inode *dir, struct dentry *dentry)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	err = fsapi_create(dir, (u8 *) dentry->d_name.name, FM_REGULAR, &fid);
@@ -2542,7 +2542,7 @@ static int sdfat_unlink(struct inode *dir, struct dentry *dentry)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	SDFAT_I(inode)->fid.size = i_size_read(inode);
@@ -2595,7 +2595,7 @@ static int sdfat_symlink(struct inode *dir, struct dentry *dentry, const char *t
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	err = fsapi_create(dir, (u8 *) dentry->d_name.name, FM_SYMLINK, &fid);
@@ -2660,7 +2660,7 @@ static int __sdfat_mkdir(struct inode *dir, struct dentry *dentry)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	err = fsapi_mkdir(dir, (u8 *) dentry->d_name.name, &fid);
@@ -2713,7 +2713,7 @@ static int sdfat_rmdir(struct inode *dir, struct dentry *dentry)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	SDFAT_I(inode)->fid.size = i_size_read(inode);
@@ -2762,7 +2762,7 @@ static int __sdfat_rename(struct inode *old_dir, struct dentry *old_dentry,
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	SDFAT_I(old_inode)->fid.size = i_size_read(old_inode);
@@ -2845,7 +2845,7 @@ static int sdfat_cont_expand(struct inode *inode, loff_t size)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	inode->i_ctime = inode->i_mtime = ts;
@@ -3094,7 +3094,7 @@ static void sdfat_truncate(struct inode *inode, loff_t old_size)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	inode->i_ctime = inode->i_mtime = ts;
@@ -3827,7 +3827,7 @@ static int sdfat_write_end(struct file *file, struct address_space *mapping,
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	if (!(err < 0) && !(fid->attr & ATTR_ARCHIVE)) {
@@ -4853,7 +4853,7 @@ static int sdfat_read_root(struct inode *inode)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 
 	SDFAT_I(inode)->fid.dir.dir = fsi->root_dir;

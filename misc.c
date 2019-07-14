@@ -267,7 +267,7 @@ TIMESTAMP_T *tm_now(struct sdfat_sb_info *sbi, TIMESTAMP_T *tp)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 	ts = CURRENT_TIME_SEC;
 #else
-  ktime_get_coarse_real_ts64(&ts);
+	ktime_get_coarse_real_ts64(&ts);
 #endif
 	
 
