@@ -1,9 +1,10 @@
-sdFAT FS support for Linux Kernel 4.4 & 5.0
+sdFAT FS support for Linux kernel 4.4 & 5.0
 =====================================
 
-sdFAT is unified FAT-based filesystem which supports FAT12/16/32(VFAT)/64(exFAT). sdFAT supports winnt short-name rule.
+sdFAT is unified FAT-based filesystem driver which supports FAT12/16/32(VFAT)/exFAT.
+sdFAT supports winnt short-name rule.
 
-Suggested Kernel config:
+Suggested kernel config:
 
     CONFIG_SDFAT_FS=y
     CONFIG_SDFAT_DELAYED_META_DIRTY=y

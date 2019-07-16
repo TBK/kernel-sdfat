@@ -5261,11 +5261,10 @@ static void __exit exit_sdfat_fs(void)
 	fsapi_shutdown();
 }
 
-module_init(init_sdfat_fs);
-module_exit(exit_sdfat_fs);
-
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("FAT/exFAT filesystem support");
 MODULE_AUTHOR("Samsung Electronics Co., Ltd.");
+MODULE_DESCRIPTION("FAT/vFAT/exFAT filesystem support");
 MODULE_VERSION(SDFAT_VERSION);
 
+module_init(init_sdfat_fs);
+module_exit(exit_sdfat_fs);
