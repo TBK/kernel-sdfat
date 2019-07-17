@@ -5151,6 +5151,7 @@ static struct file_system_type exfat_fs_type = {
 	.fs_flags    = FS_REQUIRES_DEV,
 };
 MODULE_ALIAS_FS("exfat");
+MODULE_ALIAS("exfat");
 #endif /* CONFIG_SDFAT_USE_FOR_EXFAT */
 
 #ifdef CONFIG_SDFAT_USE_FOR_VFAT
@@ -5166,6 +5167,7 @@ static struct file_system_type vfat_fs_type = {
 	.fs_flags    = FS_REQUIRES_DEV,
 };
 MODULE_ALIAS_FS("vfat");
+MODULE_ALIAS("vfat");
 #endif /* CONFIG_SDFAT_USE_FOR_VFAT */
 
 static int __init init_sdfat_fs(void)
